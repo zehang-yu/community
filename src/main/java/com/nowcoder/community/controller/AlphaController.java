@@ -47,13 +47,13 @@ public class AlphaController {
 
         // 返回响应数据
         response.setContentType("text/html;charset=utf-8");
-        try (
-                PrintWriter writer = response.getWriter();
-        ) {
-            writer.write("<h1>牛客网</h1>");
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+//        try (
+//                PrintWriter writer = response.getWriter();
+//        ) {
+//            writer.write("<h1>牛客网</h1>");
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
     }
 
     // GET请求
@@ -110,7 +110,7 @@ public class AlphaController {
     @RequestMapping(path = "/emp", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getEmp() {
-        Map<String, Object> emp = new HashMap<>();
+        Map<String, Object> emp = new HashMap<String, Object>();
         emp.put("name", "张三");
         emp.put("age", 23);
         emp.put("salary", 8000.00);
@@ -120,21 +120,21 @@ public class AlphaController {
     @RequestMapping(path = "/emps", method = RequestMethod.GET)
     @ResponseBody
     public List<Map<String, Object>> getEmps() {
-        List<Map<String, Object>> list = new ArrayList<>();
+        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
 
-        Map<String, Object> emp = new HashMap<>();
+        Map<String, Object> emp = new HashMap<String, Object>();
         emp.put("name", "张三");
         emp.put("age", 23);
         emp.put("salary", 8000.00);
         list.add(emp);
 
-        emp = new HashMap<>();
+        emp = new HashMap<String, Object>();
         emp.put("name", "李四");
         emp.put("age", 24);
         emp.put("salary", 9000.00);
         list.add(emp);
 
-        emp = new HashMap<>();
+        emp = new HashMap<String, Object>();
         emp.put("name", "王五");
         emp.put("age", 25);
         emp.put("salary", 10000.00);

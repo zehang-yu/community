@@ -50,13 +50,13 @@ public class AlphaController {
 
         // 返回响应数据
         response.setContentType("text/html;charset=utf-8");
-//        try (
-//                PrintWriter writer = response.getWriter();
-//        ) {
-//            writer.write("<h1>牛客网</h1>");
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
+        try (
+                PrintWriter writer = response.getWriter();
+        ) {
+            writer.write("<h1>牛客网</h1>");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     // GET请求
@@ -113,7 +113,7 @@ public class AlphaController {
     @RequestMapping(path = "/emp", method = RequestMethod.GET)
     @ResponseBody
     public Map<String, Object> getEmp() {
-        Map<String, Object> emp = new HashMap<String, Object>();
+        Map<String, Object> emp = new HashMap<>();
         emp.put("name", "张三");
         emp.put("age", 23);
         emp.put("salary", 8000.00);
@@ -123,21 +123,21 @@ public class AlphaController {
     @RequestMapping(path = "/emps", method = RequestMethod.GET)
     @ResponseBody
     public List<Map<String, Object>> getEmps() {
-        List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
+        List<Map<String, Object>> list = new ArrayList<>();
 
-        Map<String, Object> emp = new HashMap<String, Object>();
+        Map<String, Object> emp = new HashMap<>();
         emp.put("name", "张三");
         emp.put("age", 23);
         emp.put("salary", 8000.00);
         list.add(emp);
 
-        emp = new HashMap<String, Object>();
+        emp = new HashMap<>();
         emp.put("name", "李四");
         emp.put("age", 24);
         emp.put("salary", 9000.00);
         list.add(emp);
 
-        emp = new HashMap<String, Object>();
+        emp = new HashMap<>();
         emp.put("name", "王五");
         emp.put("age", 25);
         emp.put("salary", 10000.00);
@@ -146,28 +146,37 @@ public class AlphaController {
         return list;
     }
 
-    //cookie
+    // cookie示例
+
     @RequestMapping(path = "/cookie/set", method = RequestMethod.GET)
     @ResponseBody
     public String setCookie(HttpServletResponse response) {
-        //创建cookie
+        // 创建cookie
         Cookie cookie = new Cookie("code", CommunityUtil.generateUUID());
-        //设置cookie的生效范围
+        // 设置cookie生效的范围
         cookie.setPath("/community/alpha");
-        //设置cookie的生存时间
+        // 设置cookie的生存时间
         cookie.setMaxAge(60 * 10);
-        //发送cookie
+        // 发送cookie
         response.addCookie(cookie);
 
         return "set cookie";
     }
 
+    @RequestMapping(path = "/cookie/get", method = RequestMethod.GET)
+    @ResponseBody
+    public String getCookie(@CookieValue("code") String code) {
+        System.out.println(code);
+        return "get cookie";
+    }
+
+    // session示例
 
     @RequestMapping(path = "/session/set", method = RequestMethod.GET)
     @ResponseBody
     public String setSession(HttpSession session) {
-        session.setAttribute("id",1);
-        session.setAttribute("name","Test");
+        session.setAttribute("id", 1);
+        session.setAttribute("name", "Test");
         return "set session";
     }
 
@@ -177,6 +186,15 @@ public class AlphaController {
         System.out.println(session.getAttribute("id"));
         System.out.println(session.getAttribute("name"));
         return "get session";
+    }
+
+    // ajax示例
+    @RequestMapping(path = "/ajax", method = RequestMethod.POST)
+    @ResponseBody
+    public String testAjax(String name, int age) {
+        System.out.println(name);
+        System.out.println(age);
+        return CommunityUtil.getJSONString(0, "操作成功!");
     }
 
 }

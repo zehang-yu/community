@@ -33,10 +33,10 @@ public class HomeController {
         page.setPath("/index");
 
         List<DiscussPost> list = discussPostService.findDiscussPosts(0, page.getOffset(), page.getLimit());
-        List<Map<String, Object>> discussPosts = new ArrayList<Map<String, Object>>();
+        List<Map<String, Object>> discussPosts = new ArrayList<>();
         if (list != null) {
             for (DiscussPost post : list) {
-                Map<String, Object> map = new HashMap<String, Object>();
+                Map<String, Object> map = new HashMap<>();
                 map.put("post", post);
                 User user = userService.findUserById(post.getUserId());
                 map.put("user", user);
@@ -45,6 +45,11 @@ public class HomeController {
         }
         model.addAttribute("discussPosts", discussPosts);
         return "/index";
+    }
+
+    @RequestMapping(path = "/error", method = RequestMethod.GET)
+    public String getErrorPage() {
+        return "/error/500";
     }
 
 }

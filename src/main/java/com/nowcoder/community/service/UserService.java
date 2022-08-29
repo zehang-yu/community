@@ -200,8 +200,7 @@ public class UserService implements CommunityConstant {
         return userMapper.selectByName(username);
     }
 
-    //查询时先从缓存取值，查不到再去数据库取
-    //查到了就更新
+
     //1优先从缓存中取值
     private User getCache(int userId) {
         String redisKey = RedisKeyUtil.getUserKey(userId);

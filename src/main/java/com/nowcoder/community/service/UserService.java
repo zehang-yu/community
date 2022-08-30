@@ -200,7 +200,7 @@ public class UserService implements CommunityConstant {
         return userMapper.selectByName(username);
     }
 
-
+    //
     //1优先从缓存中取值
     private User getCache(int userId) {
         String redisKey = RedisKeyUtil.getUserKey(userId);

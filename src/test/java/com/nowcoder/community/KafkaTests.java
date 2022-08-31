@@ -19,6 +19,7 @@ public class KafkaTests {
     @Autowired
     private KafkaProducer kafkaProducer;
 
+    //kafka测试
     @Test
     public void testKafka() {
         kafkaProducer.sendMessage("test", "你好");

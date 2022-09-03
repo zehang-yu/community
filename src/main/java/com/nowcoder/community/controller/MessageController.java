@@ -155,6 +155,7 @@ public class MessageController implements CommunityConstant {
         User user = hostHolder.getUser();
 
         // 查询评论类通知
+
         Message message = messageService.findLatestNotice(user.getId(), TOPIC_COMMENT);
         Map<String, Object> messageVO = new HashMap<>();
         messageVO.put("message", message);

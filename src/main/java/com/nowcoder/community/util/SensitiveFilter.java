@@ -34,6 +34,7 @@ public class SensitiveFilter {
             String keyword;
             while ((keyword = reader.readLine()) != null) {
                 // 添加到前缀树
+
                 this.addKeyword(keyword);
             }
         } catch (IOException e) {

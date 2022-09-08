@@ -42,6 +42,7 @@ public class SensitiveFilter {
         }
     }
 
+
     // 将一个敏感词添加到前缀树中
     private void addKeyword(String keyword) {
         TrieNode tempNode = rootNode;

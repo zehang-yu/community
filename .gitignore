@@ -1,5 +1,5 @@
 HELP.md
-/target/
+
 !.mvn/wrapper/maven-wrapper.jar
 
 ### STS ###
@@ -10,7 +10,6 @@ HELP.md
 .settings
 .springBeans
 .sts4-cache
-
 
 ### IntelliJ IDEA ###
 .idea
@@ -28,4 +27,4 @@ HELP.md
 
 ### VS Code ###
 .vscode/
-/${project.build.directory}/
+

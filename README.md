@@ -1,2 +1,2 @@
 # community
-本项目是一个以寻物为基点的社区交流平台，目的是在新小区大家不熟悉的情况下，定向增加信息交流的渠道，例如疫情期间的寻物，以物换物，停车位租赁，二手买卖等。
+This project is a community communication platform based on finding objects. The purpose is to increase the channels for information exchange in the new community where everyone is unfamiliar, such as finding objects during the epidemic, bartering, parking space rental, second-hand buying and selling etc.

@@ -1,2 +1,2 @@
 # community
-This project is a community in order to find objects. The purpose is to increase the channels for information exchange in the new community where everyone is unfamiliar, such as finding objects during the epidemic, bartering, parking space rental, second-hand buying and selling etc.
+The project is a community. When people in the new community are not familiar with each other, it aims to increase channels for information exchange, such as mutual assistance during the epidemic, drug exchange, barter, parking space rental, second-hand trading, etc. You can post in the forum, and you can like other people's posts or comments, chat in real-time private messages, etc.
